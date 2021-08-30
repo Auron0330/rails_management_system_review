@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customers
   resources :products                 #⇒（リソースフルな商品ルーティング）
   resources :orders, only: [:index, :create, :destroy, :show] do     #⇒（従来のnewアクションを削除）
     get :cart, on: :collection        #⇒（getメソッドに基づく、cartアクションのルートを追加）
